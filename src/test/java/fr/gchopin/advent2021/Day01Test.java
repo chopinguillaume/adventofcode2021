@@ -10,9 +10,16 @@ import java.util.stream.Stream;
 
 class Day01Test {
 
+
+    private static Stream<Arguments> part1() {
+        return Stream.of(
+            Arguments.of("day01_test", 7),
+            Arguments.of("day01", null));
+    }
+
     @ParameterizedTest
     @MethodSource
-    void day01(String filename, Integer expectedResult) {
+    void part1(String filename, Integer expectedResult) {
         Input input = new Input(filename);
         List<Integer> measurements = input.getIntegers();
 
@@ -21,13 +28,29 @@ class Day01Test {
         if (expectedResult != null) {
             Assertions.assertEquals(expectedResult, actualResult);
         } else {
-            System.out.println("Result for %s is %s".formatted(filename, actualResult));
+            System.out.printf("Result for %s is %s%n", filename, actualResult);
         }
     }
 
-    private static Stream<Arguments> day01() {
+    private static Stream<Arguments> part2() {
         return Stream.of(
-                Arguments.of("day01_test", 7),
-                Arguments.of("day01", null));
+            Arguments.of("day01_test", 5),
+            Arguments.of("day01", null));
     }
+
+    @ParameterizedTest
+    @MethodSource
+    void part2(String filename, Integer expectedResult) {
+        Input input = new Input(filename);
+        List<Integer> measurements = input.getIntegers();
+
+        int actualResult = Day01.numberOfIncreasingMeasurementWindows(measurements);
+
+        if (expectedResult != null) {
+            Assertions.assertEquals(expectedResult, actualResult);
+        } else {
+            System.out.printf("Result for %s is %s%n", filename, actualResult);
+        }
+    }
+
 }
