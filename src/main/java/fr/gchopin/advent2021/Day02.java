@@ -4,6 +4,9 @@ import java.util.List;
 
 public class Day02 {
 
+    private Day02() {
+    }
+
     public static int planCourse(List<String> instructions) {
         int horizontalPosition = 0;
         int depth = 0;
@@ -16,6 +19,7 @@ public class Day02 {
                 case "forward" -> horizontalPosition += value;
                 case "down" -> depth += value;
                 case "up" -> depth -= value;
+                default -> throw new IllegalStateException("Unknown instruction : " + instruction);
             }
         }
 
@@ -38,6 +42,7 @@ public class Day02 {
                 }
                 case "down" -> aim += value;
                 case "up" -> aim -= value;
+                default -> throw new IllegalStateException("Unknown instruction : " + instruction);
             }
         }
 

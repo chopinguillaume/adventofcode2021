@@ -3,6 +3,10 @@ package fr.gchopin.advent2021;
 import java.util.List;
 
 public class Day03 {
+
+    private Day03() {
+    }
+
     public static int powerConsumption(List<String> binaryNumbers) {
         int binarySize = binaryNumbers.get(0).length();
 
@@ -44,9 +48,9 @@ public class Day03 {
 
     public static int lifeSupportRating(List<String> binaryNumbers) {
         String oxygenGeneratorRating = oxygenGeneratorRating(binaryNumbers);
-        String CO2ScrubberRating = CO2ScrubberRating(binaryNumbers);
+        String co2ScrubberRating = co2ScrubberRating(binaryNumbers);
 
-        return binaryValue(oxygenGeneratorRating) * binaryValue(CO2ScrubberRating);
+        return binaryValue(oxygenGeneratorRating) * binaryValue(co2ScrubberRating);
     }
 
 
@@ -54,7 +58,8 @@ public class Day03 {
         List<String> filteredNumbers = recursiveMostCommonFilterAtIndex(binaryNumbers, 0);
         return filteredNumbers.get(0);
     }
-    private static String CO2ScrubberRating(List<String> binaryNumbers) {
+
+    private static String co2ScrubberRating(List<String> binaryNumbers) {
         List<String> filteredNumbers = recursiveLeastCommonFilterAtIndex(binaryNumbers, 0);
         return filteredNumbers.get(0);
     }

@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Day05Test {
+class Day05Test {
 
     private static Stream<Arguments> part1() {
         return Stream.of(

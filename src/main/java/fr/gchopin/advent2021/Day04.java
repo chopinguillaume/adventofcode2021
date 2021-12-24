@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 
 public class Day04 {
 
+    private Day04() {
+    }
+
     public static int scoreOfWinningBoard(List<String> input) {
         List<Integer> drawnNumbers = Stream.of(input.get(0).split(",")).map(Integer::valueOf).toList();
 

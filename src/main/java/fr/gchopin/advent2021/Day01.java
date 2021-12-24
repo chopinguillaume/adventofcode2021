@@ -7,6 +7,9 @@ import java.util.List;
  */
 public class Day01 {
 
+    private Day01() {
+    }
+
     public static int numberOfIncreasingMeasurements(List<Integer> measurements) {
         int numberOfIncreasingMeasurements = 0;
         Integer previousMeasurement = null;
